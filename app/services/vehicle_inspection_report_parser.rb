@@ -17,10 +17,10 @@ class VehicleInspectionReportParser
 
   def update_organization(row)
     inspection_date = Date.parse(row["inspection_date"])
-    organisation = Organisation.find_or_initialize_by(id: row["vehicle_org_id"])
+    organization = Organization.find_or_initialize_by(id: row["vehicle_org_id"])
       
-    if organisation.new_record? || organisation.latest_inspection_date <= inspection_date
-      organisation.update(
+    if organization.new_record? || organization.latest_inspection_date <= inspection_date
+      organization.update(
         name: row["org_name"],
         latest_inspection_date: inspection_date
       )
@@ -34,7 +34,7 @@ class VehicleInspectionReportParser
     if vehicle.new_record? || (vehicle.latest_inspection_date <= inspection_date && row["inspection_passed"].present?)
       vehicle.update(
         latest_inspection_date: inspection_date,
-        organisation_id: row["vehicle_org_id"],
+        organization_id: row["vehicle_org_id"],
         inspection_period_id: row["inspection_period_id"],
         inspection_passed: row["inspection_passed"]
       )

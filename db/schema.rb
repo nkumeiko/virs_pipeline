@@ -14,7 +14,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_01_022103) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "organisations", id: false, force: :cascade do |t|
+  create_table "organizations", id: false, force: :cascade do |t|
     t.bigint "id", null: false
     t.string "name", null: false
     t.date "latest_inspection_date", null: false
@@ -25,12 +25,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_01_022103) do
   create_table "vehicles", id: false, force: :cascade do |t|
     t.bigint "id", null: false
     t.date "latest_inspection_date", null: false
-    t.bigint "organisation_id", null: false
+    t.bigint "organization_id", null: false
     t.integer "inspection_period_id", null: false
     t.boolean "inspection_passed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["organisation_id"], name: "index_vehicles_on_organisation_id"
+    t.index ["organization_id"], name: "index_vehicles_on_organization_id"
   end
 
 end

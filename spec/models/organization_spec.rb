@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe Organisation do 
+RSpec.describe Organization do 
   describe 'associations' do
     it { should have_many(:vehicles).class_name('Vehicle') }
   end

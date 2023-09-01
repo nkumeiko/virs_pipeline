@@ -1,7 +1,7 @@
 FactoryBot.define do 
-  factory :organisation do 
+  factory :organization do 
     sequence(:id, 10000)
-    name { "Organisation #{id}" }
+    name { "Organization #{id}" }
     latest_inspection_date { Date.today }
   end
 end

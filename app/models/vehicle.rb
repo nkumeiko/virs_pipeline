@@ -1,5 +1,5 @@
 class Vehicle < ApplicationRecord
   self.primary_key = :id
 
-  belongs_to :organisation
+  belongs_to :organization
 end

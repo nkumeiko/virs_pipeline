@@ -31,13 +31,13 @@ RSpec.describe VehicleInspectionReportParser do
   it "creates correct records" do
     expect { call }
       .to change(Vehicle, :count).by(4)
-      .and change(Organisation, :count).by(3)
+      .and change(Organization, :count).by(3)
 
     expect(Vehicle.find(2811)).to have_attributes(
       inspection_passed: false
     )
 
-    expect(Organisation.find(1920)).to have_attributes(
+    expect(Organization.find(1920)).to have_attributes(
       name: "Economotor New"
     )
   end

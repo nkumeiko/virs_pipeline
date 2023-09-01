@@ -5,22 +5,22 @@ RSpec.describe TopFailingReportGenerator do
     described_class.new.call
   end
 
-  let!(:org_1) { create :organisation }
-  let!(:org_2) { create :organisation }
-  let!(:org_3) { create :organisation }
-  let!(:org_4) { create :organisation }
+  let!(:org_1) { create :organization }
+  let!(:org_2) { create :organization }
+  let!(:org_3) { create :organization }
+  let!(:org_4) { create :organization }
 
-  let!(:org_1_passed_vehicles) { create_list :vehicle, 10, :passed, organisation: org_1 }
-  let!(:org_1_failed_vehicles) { create_list :vehicle, 9, :failed, organisation: org_1 }
+  let!(:org_1_passed_vehicles) { create_list :vehicle, 10, :passed, organization: org_1 }
+  let!(:org_1_failed_vehicles) { create_list :vehicle, 9, :failed, organization: org_1 }
 
-  let!(:org_2_passed_vehicles) { create_list :vehicle, 10, :passed, organisation: org_2 }
-  let!(:org_2_failed_vehicles) { create_list :vehicle, 8, :failed, organisation: org_2 }
+  let!(:org_2_passed_vehicles) { create_list :vehicle, 10, :passed, organization: org_2 }
+  let!(:org_2_failed_vehicles) { create_list :vehicle, 8, :failed, organization: org_2 }
 
-  let!(:org_3_passed_vehicles) { create_list :vehicle, 10, :passed, organisation: org_3 }
-  let!(:org_3_failed_vehicles) { create_list :vehicle, 7, :failed, organisation: org_3 }
+  let!(:org_3_passed_vehicles) { create_list :vehicle, 10, :passed, organization: org_3 }
+  let!(:org_3_failed_vehicles) { create_list :vehicle, 7, :failed, organization: org_3 }
 
-  let!(:org_4_passed_vehicles) { create_list :vehicle, 10, :passed, organisation: org_4 }
-  let!(:org_4_failed_vehicles) { create_list :vehicle, 6, :failed, organisation: org_4 }
+  let!(:org_4_passed_vehicles) { create_list :vehicle, 10, :passed, organization: org_4 }
+  let!(:org_4_failed_vehicles) { create_list :vehicle, 6, :failed, organization: org_4 }
 
   it "returns correct records" do 
     expect(call).to match([
