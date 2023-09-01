@@ -8,3 +8,8 @@ rake virs_report:generate
 ```
 
 Last command will read all report files from ./reports folder; update database and generate virs_report.tsv file in project root.
+
+To run the tests
+```bash
+bundle exec rspec
+```
