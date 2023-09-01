@@ -25,12 +25,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_01_022103) do
   create_table "vehicles", id: false, force: :cascade do |t|
     t.bigint "id", null: false
     t.date "latest_inspection_date", null: false
-    t.bigint "organistaion_id", null: false
+    t.bigint "organisation_id", null: false
     t.integer "inspection_period_id", null: false
     t.boolean "inspection_passed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["organistaion_id"], name: "index_vehicles_on_organistaion_id"
+    t.index ["organisation_id"], name: "index_vehicles_on_organisation_id"
   end
 
 end
